@@ -1,5 +1,5 @@
 import { Navbar, Container, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
-import { ModalCart } from './ModalCart';
+import { WidgetCart } from './WidgetCart';
 
 export const NavBar = () => {
     return (
@@ -34,7 +34,7 @@ export const NavBar = () => {
                     </Form>
                     <Nav> 
                         <Nav.Link href="#cart">
-                            <ModalCart/>
+                            <WidgetCart/>
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
