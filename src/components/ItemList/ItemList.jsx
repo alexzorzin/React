@@ -1,11 +1,31 @@
-import React from "react";
+// import React from 'react'
+// import { Item } from '../../helpers/Item'
 
-const ItemListMenu = (props) => {
-    return (
-        <>
-            <a className="col me-3 container text-decoration-none">{props.item}</a>
-        </>
-    )
-}
+// function ItemList() {
+//     return (
+//         <div>
+//             {loading ? <h1>Espere por favor...</h1> : products.map(prod => <div key={prod.id} className="card w-50 mt-5 mb-5 container" >
+//         <div className="card-header">
+//           {prod.name}
+//         </div>
+//         <div className="card-body">
+//           <img className="img-fluid w-25" src={prod.img} alt="foto" />
+//           <div>
+//             {'$' + prod.price}
+//           </div>
+//         </div>
+//         <div className="card-footer">
 
-export default ItemListMenu
+//           <button className="btn btn-outline-primary btn-block">
+//             Comprar
+//           </button>
+
+//         </div>
+
+//       </div>
+//       )}
+//         </div>
+//     )
+// }
+
+// export default ItemList

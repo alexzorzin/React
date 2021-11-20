@@ -1,12 +1,12 @@
-import React from 'react';
+// import React from 'react'
+// import ItemList from '../ItemList/ItemList.jsX'
 
-const ItemList = (props) => {
-    console.log(props)
-    return (
-        <>
-            <p>{props.item}</p>
-        </>
-    )
-}
+// function ItemListContainer() {
+//     return (
+//         <div>
+//             <ItemList />
+//         </div>
+//     )
+// }
 
-export default ItemList
+// export default ItemListContainer

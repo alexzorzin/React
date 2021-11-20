@@ -1,34 +1,52 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import ItemListMenu from './components/ItemList/ItemList';
-import ItemList, { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
+import { useState, useEffect } from 'react';
 import { NavBar } from './components/NavBar/NavBar';
-import airforce from './airforce.png';
+import { Item } from './helpers/Item';
 
 function App() {
+
+  const [products, setProducts] = useState([])
+  const [loading, setLoading] = useState(true)
+  useEffect(() => {
+    Item
+      .then(data => {
+        console.log('llamo a la api de productos')
+        setProducts(data)
+      })
+      .finally(() => setLoading(false))
+  }, [])
+
   return (
-    <div className="App overflow-hidden">
+    <div className="App">
       {/* NAVBAR */}
       <header>
         <NavBar />
-        <div className="row text-uppercase ms-5">
-        <ItemListMenu item="Nike" />
-        <ItemListMenu item="Adidas" />
-        <ItemListMenu item="Puma" />
-        <ItemListMenu item="Reebook" />
-        <ItemListMenu item="Zara" />
-        <ItemListMenu item="Vans" />
-        <ItemListMenu item="Crocs" />
-        </div>
       </header>
-      {/* CONTENIDO */}
-      <div className="content text-uppercase">
-        <img src={airforce} className="w-25" />
-        <ItemList item='Compra las AirForce One a un precio espectacular'/>
-      </div>
-    </div>
+      {loading ? <h1>Espere por favor...</h1> : products.map(prod => <div key={prod.id} className="card w-50 mt-5 mb-5 container" >
+        <div className="card-header">
+          {prod.name}
+        </div>
+        <div className="card-body">
+          <img className="img-fluid w-25" src={prod.img} alt="foto" />
+          <div>
+            {'$' + prod.price}
+          </div>
+        </div>
+        <div className="card-footer">
 
+          <button className="btn btn-outline-primary btn-block">
+            Comprar
+          </button>
+
+        </div>
+
+      </div>
+      )}
+    </div>
   );
 }
+
+
 
 export default App;
