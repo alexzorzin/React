@@ -30,6 +30,9 @@ function App() {
         <div className="card-body">
           <img className="img-fluid w-25" src={prod.img} alt="foto" />
           <div>
+            {'Talle: ' + prod.size}
+          </div>
+          <div>
             {'$' + prod.price}
           </div>
         </div>
