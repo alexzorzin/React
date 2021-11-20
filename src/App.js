@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { useState, useEffect } from 'react';
 import { NavBar } from './components/NavBar/NavBar';
-import { Item } from './helpers/Item';
+import { Item } from './components/Item/Item';
 
 function App() {
 
