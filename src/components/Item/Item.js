@@ -7,7 +7,7 @@ const products =
         { id: 5, name: 'Adidas Superstar', size: 7, price: 16000, img: 'https://images.footlocker.com/is/image/FLEU/316772989204_01?wid=763&hei=538&fmt=png-alpha' },
         { id: 6, name: 'Nike Air Max 97', size: 8, price: 25599, img: 'https://www.moovbydexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dw26473373/products/NI_921733-603/NI_921733-603-1.JPG' },
         { id: 7, name: 'Vans Old Skool', size: 7.5, price: 10999, img: 'https://www.moovbydexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dw0dadcf9f/products/VA_VN000D3HY28/VA_VN000D3HY28-1.JPG' },
-        { id: 8, name: 'Puma City Rider', size: 7, price: 14000, img: 'https://www.moovbydexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dwefbf0983/products/PU_382044-03/PU_382044-03-1.JPG' },
+        { id: 8, name: 'Puma City Rider', size: 7.5, price: 14000, img: 'https://www.moovbydexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dwefbf0983/products/PU_382044-03/PU_382044-03-1.JPG' },
         { id: 9, name: 'Adidas Stan Smith', size: 9, price: 17999, img: 'https://www.moovbydexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dw727144c7/products/AD_FY5460/AD_FY5460-1.JPG' }
     ];
 
