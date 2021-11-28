@@ -1,11 +1,12 @@
 import { Navbar, Container, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
 import { WidgetCart } from './WidgetCart';
+import { Link, NavLink } from 'react-router-dom';
 
 export const NavBar = () => {
     return (
         <Navbar bg="dark" expand="lg" variant="dark">
             <Container>
-                <Navbar.Brand href="#">ZShoes</Navbar.Brand>
+                <Navbar.Brand href="/React/">ZShoes</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
@@ -14,13 +15,12 @@ export const NavBar = () => {
                         navbarScroll
                     >
                         <Nav.Link href="#catalogo">Catálogo</Nav.Link>
-                        <NavDropdown title="Más" id="navbarScrollingDropdown">
-                            <NavDropdown.Item href="#metodos-de-pago">Metodos de pago</NavDropdown.Item>
-                            <NavDropdown.Item href="#entregas">Entregas</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#sobre-nosotros">
-                                Sobre nosotros
-                            </NavDropdown.Item>
+                        <NavDropdown title="Talles" id="navbarScrollingDropdown">
+                            <NavLink to='/React/' activeClassName="active" className="link d-flex ms-2 text-decoration-none text-black">Todos</NavLink>
+                            <NavLink to='/React/size/7' activeClassName="active" className="link d-flex ms-2 text-decoration-none text-black">7</NavLink>
+                            <NavLink to='/React/size/7.5' activeClassName="active" className="link d-flex ms-2 text-decoration-none text-black">7.5</NavLink>
+                            <NavLink to='/React/size/8' activeClassName="active" className="link d-flex ms-2 text-decoration-none text-black">8</NavLink>
+                            <NavLink to='/React/size/9' activeClassName="active" className="link d-flex ms-2 text-decoration-none text-black">9</NavLink>
                         </NavDropdown>
                     </Nav>
                     <Form className="d-flex container">
