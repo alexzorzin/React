@@ -4,10 +4,13 @@ import { NavBar } from './components/NavBar/NavBar';
 import ItemListContainer from './components/container/ItemListContainer/ItemListContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ItemDetailContainer from './components/detail/ItemDetailContainer.jsx';
+import CartContextProvider from './components/context/CartContext';
+import Cart from './components/Cart';
 
 function App() {
 
   return (
+    <CartContextProvider>
     <BrowserRouter>
       <div className="App">
         {/* NAVBAR */}
@@ -20,10 +23,13 @@ function App() {
           <Route path='/React/' element={<ItemListContainer />}></Route>
           <Route path='/React/size/:sizeId' element={<ItemListContainer />}></Route>
           <Route path='/React/item/:prodId' element={<ItemDetailContainer />}></Route>
+          <Route path='/React/cart' element={<Cart />}></Route>
         </Routes>
 
       </div>
     </BrowserRouter>
+    </CartContextProvider>
+
   );
 }
 

@@ -1,38 +1,35 @@
-import { useState } from "react";
+import { useCartContext } from "./context/CartContext";
 
-export default function ItemCount(props) {
 
-    const [Count, setCount] = useState(0);
+const ItemCount = ({ stock, onAdd }) => {
 
-    const counterAdd = () => {
-        if (Count < props.stock) {
-            setCount(Count + 1)
+    const {count, setCount} = useCartContext()
+
+    const addCounter = () => {
+        if (count < stock) {
+            setCount(count + 1)
         } else {
-            alert('No hay suficiente stock.');
+            alert('No queda más stock de este producto.');
         }
     }
 
-    const counterSubstract = () => {
-        if (Count > 1) {
-            setCount(Count - 1)
+    const substractCounter = () => {
+        if (count <= stock && count > 1) {
+            setCount(count - 1)
         }
         else {
             setCount(0);
         }
     }
 
-    const addToCart = () => {
-        alert('Has añadido el producto correctamente');
-    }
     return (
         <>
-            <button className='btn btn-primary mx-2' onClick={counterAdd}>+</button>
-            <p>{Count}</p>
-            <button className='btn btn-primary mx-2' onClick={counterSubstract}>-</button>
-
-            {/* <div className='mt-2'> */}
-                <button className='btn btn-primary mx-3' onClick={addToCart}>Agregar al carrito</button>
-            {/* </div> */}
+            <button className='btn btn-primary mx-2' onClick={addCounter}>+</button>
+            <p>{count}</p>
+            <button className='btn btn-primary mx-2' onClick={substractCounter}>-</button>
+            <button className='btn btn-primary mx-3' onClick={onAdd}>Agregar al carrito</button>
         </>
     )
 }
+
+export default ItemCount 

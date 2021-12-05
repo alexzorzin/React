@@ -1,6 +1,6 @@
 import { Navbar, Container, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
 import { WidgetCart } from './WidgetCart';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const NavBar = () => {
     return (
@@ -33,9 +33,7 @@ export const NavBar = () => {
                         <Button variant="outline-info">Buscar</Button>
                     </Form>
                     <Nav> 
-                        <Nav.Link href="#cart">
-                            <WidgetCart/>
-                        </Nav.Link>
+                    <NavLink to="/React/cart"  activeClassName="active" className="link ms-2 text-decoration-none text-white">{<WidgetCart />}</NavLink>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
