@@ -18,7 +18,7 @@ function Cart() {
                             </div>
                             <div className="row">
                                 <img src={prod.img} className="w-25 col-6 ms-5" alt={prod.item} />
-                                <div className="col mt-5">{prod.Stock}  x  {prod.itemg}</div>
+                                <div className="col mt-5">{prod.Stock}  x  {prod.item}</div>
                             </div>
 
                         </div>
