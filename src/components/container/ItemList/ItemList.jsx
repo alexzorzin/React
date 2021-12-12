@@ -1,15 +1,20 @@
-import React from 'react';
-import Item from '../Item/Item';
+
+import Item from "../Item/Item"
 
 
-export default function ItemList(props) {
+const ItemList = ({loading, products}) => {
     return (
-        <>
-            {props.list.map((item, index) => {
-                return (
-                    <Item key={index} item={item} />
-                )
-            })}
-        </>
+        <div>
+            {loading ? <h1 className="loading">Loading...</h1> :
+                <div className="tours">
+                    {products.map((item) => (
+                        <Item item={item} key={item.id} />
+                    ))}
+                </div>
+            }
+            
+        </div>
     )
 }
+
+export default ItemList

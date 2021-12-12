@@ -1,8 +1,11 @@
 import { Navbar, Container, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
 import { WidgetCart } from './WidgetCart';
 import { NavLink } from 'react-router-dom';
+import { useCartContext } from '.././context/CartContext'
+import { Badge } from 'react-bootstrap'
 
 export const NavBar = () => {
+    const {cartList} = useCartContext()
     return (
         <Navbar bg="dark" expand="lg" variant="dark">
             <Container>
@@ -34,6 +37,7 @@ export const NavBar = () => {
                     </Form>
                     <Nav> 
                     <NavLink to="/React/cart"  activeClassName="active" className="link ms-2 text-decoration-none text-white">{<WidgetCart />}</NavLink>
+                    {cartList.length>0 && <Badge bg="info" className='p-1'>{cartList.length}</Badge>}
                     </Nav>
                 </Navbar.Collapse>
             </Container>

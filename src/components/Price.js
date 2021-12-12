@@ -9,8 +9,8 @@ export const TotalPrice = (() => {
     useEffect (() => {
         let price = 0;
 
-        cartList.forEach(e => {
-            price += e.totalPrice
+        cartList.forEach(prod => {
+            prod.price += prod.stock
         });
         setTotalPrice(price)
     }, [cartList])
@@ -18,7 +18,7 @@ export const TotalPrice = (() => {
 
     return (
 
-        <p className="">Precio: AR$ {totalPrice}</p>
+        <p>Precio: AR$ {totalPrice}</p>
     )
 
 
