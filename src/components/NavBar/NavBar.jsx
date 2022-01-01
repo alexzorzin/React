@@ -17,9 +17,9 @@ export const NavBar = () => {
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
-                        <Nav.Link href="#catalogo">Catálogo</Nav.Link>
+                        <NavLink to='/React/catalogo' activeClassName="active" className="link d-flex me-1 mt-2 text-decoration-none text-white">Catálogo</NavLink>
                         <NavDropdown title="Talles" id="navbarScrollingDropdown">
-                            <NavLink to='/React/' activeClassName="active" className="link d-flex ms-2 text-decoration-none text-black">Todos</NavLink>
+                            <NavLink to='/React/catalogo' activeClassName="active" className="link d-flex ms-2 text-decoration-none text-black">Todos</NavLink>
                             <NavLink to='/React/size/7' activeClassName="active" className="link d-flex ms-2 text-decoration-none text-black">7</NavLink>
                             <NavLink to='/React/size/7.5' activeClassName="active" className="link d-flex ms-2 text-decoration-none text-black">7.5</NavLink>
                             <NavLink to='/React/size/8' activeClassName="active" className="link d-flex ms-2 text-decoration-none text-black">8</NavLink>

@@ -1,0 +1,385 @@
+.checkout-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .back-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    border: black;
+  }
+  
+  .checkout-details-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+  }
+  
+  .checkout-cart {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(90, 166, 236);
+    margin-bottom: 20px;
+    gap: 15px;
+  }
+  
+  .checkout-cart img {
+    width: 100px;
+    margin-left: 10px;
+  }
+  
+  .checkout-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 15px 0;
+  }
+  
+  .checkout-tour-name {
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .checkout-tour-detail {
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  .buyer-form {
+    margin: 50px 10px 0 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  .col-1,
+  .col-2 {
+    width: 100%;
+  }
+  
+  .col-1 label,
+  .col-2 label {
+    display: block;
+  }
+  
+  .col-1 input,
+  .col-1 select,
+  .col-2 input,
+  .col-2 select {
+    width: 15rem;
+    margin-bottom: 15px;
+    height: 2rem;
+  
+  }
+  
+  .subscription {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    font-size: 0.8rem;
+    align-items: center;
+  }
+  
+  .select-payment {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .payment-options {
+    grid-area: payment;
+    justify-self: center;
+    margin-left: 10px;
+    width: 300px;
+  }
+  
+  .form-payment {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .accordion-item {
+    border: none;
+  }
+  
+  .accordion-header {
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+  }
+  
+  .accordion-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-color: gray;
+  }
+  
+  .accordion-button::after {
+    display: none;
+  }
+  
+  .accordion-button:not(.collapsed) {
+    color: black;
+    background-color: white;
+  }
+  
+  .accordion-button:focus {
+    box-shadow: none;
+  }
+  
+  .accordion-body {
+    font-size: 0.7rem;
+  }
+  
+  .label-card {
+    display: flex;
+    align-content: center;
+    gap: 5px;
+  }
+  
+  .container-icons {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .container-icons i {
+    padding: 0 0.2rem;
+    font-size: 1rem;
+  }
+
+  .card-details label {
+    margin-top: 0.3rem;
+    display: block;
+  }
+  
+  .card-details input {
+    margin-bottom: 0.3rem;
+  }
+  
+  .btn-finish {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+  
+  /* ORDER CONFIRMATION */
+  
+  .order-confirm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 3rem;
+    gap: 0.5rem;
+  }
+  
+  
+  @media only screen and (min-width: 576px) {
+  
+    /* // CHECKOUT //  */
+  
+    .checkout-details-container {
+      padding: 0 20px;
+    }
+  
+    .checkout-cart img {
+      width: 120px;
+    }
+  
+    .buyer-form {
+      margin: 50px 10px 0 20px;
+    }
+  
+    .col-1 label,
+    .col-2 label {
+      font-size: 1.1rem;
+    }
+  
+    .subscription {
+      font-size: 1rem;
+    }
+  
+    .select-payment {
+      margin-top: 30px;
+    }
+  
+    .payment-options {
+      margin-left: 20px;
+      width: 400px;
+    }
+  
+    .accordion-body {
+      font-size: 1rem;
+    }
+  
+    .container-icons i {
+      padding: 0 0.2rem;
+      font-size: 1.2rem;
+    }
+  
+    .card-details input {
+      margin-bottom: 0.5rem;
+    }
+  
+    /* FOOTER */
+  
+    .footer {
+      height: 120px;
+    }
+  
+    .footer p {
+      font-size: 15px;
+    }
+  
+    .soMeIcons a img {
+      width: 2rem;
+    }
+  
+  }
+  
+  @media only screen and (min-width: 768px) {
+  
+
+    /* CHECKOUT PAGE */
+  
+    .checkout-container {
+      display: grid;
+      grid-template-columns: 35% 65%;
+      grid-template-rows: 60px auto auto;
+      grid-template-areas:
+        "volver volver"
+        "column1 column2"
+        ". payment";
+    }
+  
+    .back-cart {
+      grid-area: volver;
+    }
+  
+    .checkout-details-container {
+      grid-area: column1;
+      margin: 50px 0;
+      border-right: 1px solid lightgray;
+      padding: 0 10px;
+      position: sticky;
+      top: 50px;
+    }
+  
+    .checkout-cart {
+      flex-direction: row;
+      align-items: center;
+    }
+  
+  
+    .checkout-detail {
+      grid-area: column1;
+    }
+  
+  
+    .checkout-tour-detail {
+      font-size: 0.85rem;
+    }
+  
+    .buyer-form {
+      grid-area: column2;
+      margin: 50px 80px;
+      height: fit-content;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "name surname"
+        "email re-email"
+        "country source"
+        "subs subs"
+        "btn-pay btn-pay";
+    }
+  
+    #buyer-name {
+      grid-area: name;
+      margin-right: 10px;
+  
+    }
+  
+    #buyer-surname {
+      grid-area: surname;
+    }
+  
+    #buyer-email {
+      grid-area: email;
+      margin-right: 10px;
+  
+    }
+  
+    #buyer-re-email {
+      grid-area: re-email;
+    }
+  
+    #buyer-country {
+      grid-area: country;
+      margin-right: 10px;
+  
+    }
+  
+    #buyer-source {
+      grid-area: source;
+    }
+  
+    .col-1,
+    .col-2 {
+      width: auto;
+    }
+  
+    .buyer-form input,
+    .buyer-form select {
+      margin-bottom: 30px;
+    }
+  
+    .subscription {
+      grid-area: subs;
+      font-size: 0.85rem;
+    }
+  
+    .subscription input {
+      margin: 0 0 5px 0;
+    }
+  
+    .checkout-confirm {
+      margin-top: 20px;
+    }
+  
+    .select-payment {
+      grid-area: btn-pay;
+      margin: 1rem 0 0 0;
+    }
+  
+    .select-payment input {
+      margin: 0;
+    }
+  
+    .payment-options {
+      grid-area: payment;
+      margin: 0 0 30px 80px;
+      width: 50%;
+      justify-self: flex-start;
+    }
+  
+    .accordion-button {
+      padding: 1rem 1.25rem 1rem 0;
+    }
+  
+    .btn-finish {
+      width: fit-content;
+      align-self: flex-end;
+    }
+  
+    .soMeIcons a img:hover {
+      transform: scale(1.2);
+    }
+  
+  }

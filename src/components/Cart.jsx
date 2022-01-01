@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCartContext } from './context/CartContext';
-import { TotalPrice } from './Price';
 
 const Cart = () => {
-    const { cartList, clearCart, removeProd } = useCartContext()
+   
+    const { cartList, clearCart, removeProd, totalPrice } = useCartContext() 
     console.log(cartList)
     return (
         <>
@@ -30,14 +30,14 @@ const Cart = () => {
                         </div>
                         </div>
                     )}
-                    <TotalPrice />
+                    <p className='mx-2 info textUppercase'>Precio total =  ${totalPrice}</p>
                     <button className="btn btn-primary mb-5 mx-2" onClick={clearCart}>Vaciar carrito</button>
-                    <button className="btn btn-primary mb-5 mx-2" >Comprar</button>
+                    <Link to='/React/checkout' className="btn btn-primary mb-5 mx-2" activeClassName="active" >Comprar</Link>
                 </div>
                 :
                 <div className="mt-5">
                     <p className='fs-3 fw-bold'>Tu carrito se encuentra vacío</p>
-                    <p className='fw-normal fs-5'>Agregue sus productos clickeando <Link to='/React' className='fw-bold'>AQUÍ</Link></p>
+                    <p className='fw-normal fs-5'>Agregue sus productos clickeando <Link to='/React/catalogo' className='fw-bold'>AQUÍ</Link></p>
                 </div>
             }
         </>

@@ -6,7 +6,7 @@ const ItemList = ({loading, products}) => {
     return (
         <div>
             {loading ? <h1 className="loading">Loading...</h1> :
-                <div className="tours">
+                <div className="shoes">
                     {products.map((item) => (
                         <Item item={item} key={item.id} />
                     ))}

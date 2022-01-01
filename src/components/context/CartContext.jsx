@@ -25,15 +25,17 @@ const CartContextProvider = ({ children }) => {
 
     const removeProd = (id) => {
         let updatedCartList = cartList.filter(prod => prod.id !== id)
-        setCartList([...updatedCartList])
+        setCartList([updatedCartList])
     }
+
+    const totalPrice = cartList.map(prod => (prod.Stock * prod.price)).reduce((acc, el) => acc + el, 0);
 
     const clearCart = () => {
         setCartList([])
     }
 
     return (
-        <CartContext.Provider value={{ cartList, addItem, clearCart, removeProd, count, setCount }}>
+        <CartContext.Provider value={{ cartList, addItem, clearCart, removeProd, count, setCount, totalPrice }}>
             {children}
         </CartContext.Provider>
     )
