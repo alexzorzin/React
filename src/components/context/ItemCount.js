@@ -1,5 +1,5 @@
-import { useCartContext } from "./context/CartContext";
-
+import { useCartContext } from "./CartContext";
+import swal from '@sweetalert/with-react';
 
 const ItemCount = ({ stock, onAdd }) => {
 
@@ -9,7 +9,7 @@ const ItemCount = ({ stock, onAdd }) => {
         if (count < stock) {
             setCount(count + 1)
         } else {
-            alert('No queda más stock de este producto.');
+            swal("ERROR", "No hay mas stock de este producto", "error");
         }
     }
 

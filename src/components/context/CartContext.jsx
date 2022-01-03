@@ -1,4 +1,4 @@
-import { useState, createContext, useContext } from "react";
+import { useState, createContext, useContext, useEffect } from "react";
 
 const CartContext = createContext([])
 export const useCartContext = () => useContext(CartContext)
@@ -7,15 +7,18 @@ const CartContextProvider = ({ children }) => {
 
     const [cartList, setCartList] = useState([])
     const [count, setCount] = useState(1)
+    const [totalPrice, setTotalPrice] = useState(0)
 
     const addItem = (item) => {
         let repeated = cartList.find(e => e.item === item.item)
         if (repeated) {
             cartList.map( (e) => {
-                if (e.item === item.item) {
+                if ((e.item === item.item) && (e.stock < item.stock)) {
                     e.stock = e.stock + count
-                }
-                return e;
+                
+            }
+            
+            return e;
             });
             console.log("Estás repitiendo")
         } else {
@@ -23,12 +26,16 @@ const CartContextProvider = ({ children }) => {
         }
     }
 
-    const removeProd = (id) => {
-        let updatedCartList = cartList.filter(prod => prod.id !== id)
-        setCartList([updatedCartList])
+    const removeProd = (item) => {
+        let updatedCartList = cartList.filter(prod => prod.item !== item)
+        setCartList([...updatedCartList])
+        
     }
 
-    const totalPrice = cartList.map(prod => (prod.Stock * prod.price)).reduce((acc, el) => acc + el, 0);
+    useEffect (() => {
+        const totalPrice = cartList.map(prod => (prod.stock * prod.price)).reduce((acc, el) => acc + el, 0);
+        setTotalPrice(totalPrice)
+    }, [cartList])
 
     const clearCart = () => {
         setCartList([])

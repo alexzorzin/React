@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import './DetailStyle.css';
-import ItemCount from '../ItemCount';
+import ItemCount from '../context/ItemCount';
 import { useCartContext } from '../context/CartContext';
+import swal from '@sweetalert/with-react';
 
 const CartButton = () => {
     return (
@@ -18,10 +19,10 @@ export const ItemDetail = ({ item }) => {
     const [button, setButton] = useState('countButton')
 
     const onAdd = (() => {
-        addItem({ item: item.name, Stock: count, img: item.img, price: item.price })
+        addItem({ item: item.name, stock: count, img: item.img, price: item.price, size: item.size })
         setButton('CartButton')
         setCount(1)
-        alert("Has agregado el producto al carrito")
+        swal(" ",`¡Agregaste unas ${item.name} al carrito!`, "success");
     })
     
     console.log(cartList)

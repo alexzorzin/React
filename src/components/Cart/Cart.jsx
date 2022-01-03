@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useCartContext } from './context/CartContext';
+import { useCartContext } from '../context/CartContext';
 
 const Cart = () => {
    
@@ -19,10 +19,10 @@ const Cart = () => {
                             </div>
                             <div className="row">
                                 <img src={prod.img} className="w-25 col-5 ms-5" alt={prod.item} />
-                                <div className="col-3 mt-5">{prod.Stock}  x  {prod.item}</div>
-                                <div className="col-3 mt-5">AR$ {prod.price * prod.Stock}</div>
+                                <div className="col-3 mt-5">{prod.stock}  x  {prod.item}</div>
+                                <div className="col-3 mt-5">AR$ {prod.price * prod.stock}</div>
                                 <div className="col-1 mt-5">
-                        <button className="btn btn-danger btn-sm" onClick={() => removeProd(prod.id)} >
+                        <button className="btn btn-danger btn-sm" onClick={() => removeProd(prod.item)} >
                             <i className="fa fa-trash"></i>  Eliminar
                         </button>
                     </div>
@@ -37,7 +37,7 @@ const Cart = () => {
                 :
                 <div className="mt-5">
                     <p className='fs-3 fw-bold'>Tu carrito se encuentra vacío</p>
-                    <p className='fw-normal fs-5'>Agregue sus productos clickeando <Link to='/React/catalogo' className='fw-bold'>AQUÍ</Link></p>
+                    <p className='fw-normal fs-5'>Agregue sus productos clickeando <Link to='/React/' className='fw-bold'>AQUÍ</Link></p>
                 </div>
             }
         </>
